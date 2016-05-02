@@ -1,23 +1,18 @@
-"""A place for my functional tests to live."""
 
 from selenium import webdriver
 import unittest
 
 
 class NewVisitorTest(unittest.TestCase):
-    """Test a new visitor's experience on the site."""
 
     def setUp(self):
-        """Set up the test environment."""
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
-        """Tear down the test environment."""
         self.browser.quit()
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-        """Test new user experience on the site."""
         # Edith has heard about a cool new online to-do app. She goes to
         # checkout its homepage
         self.browser.get('http://localhost:8000')
